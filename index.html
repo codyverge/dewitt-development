@@ -74,9 +74,9 @@
         <!-- Phone Header -->
         <div class="bg-brand-orange text-white p-2 shadow-lg">
             <div class="flex items-center justify-between px-2">
-                <a href="/" class="bg-white p-1 rounded shadow-sm inline-block">
-                <img src="logo.jpg.png" alt="DeWitt Development" class="h-8 w-auto object-contain">
-                </a>
+                <div class="bg-white p-1 rounded shadow-sm">
+                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-8 w-auto object-contain">
+                </div>
                 <a href="tel:9403730567" class="flex items-center space-x-2 tap-target">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -103,18 +103,21 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="/" class="bg-white p-2 rounded shadow-sm inline-block hover:shadow-md transition-shadow">
-                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-16 w-auto max-w-xs object-contain">
-                    </a>
+                    <div class="bg-white p-2 rounded shadow-sm">
+                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-16 w-auto max-w-xs object-contain">
+                    </div>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <a href="/stop-foreclosure" class="text-red-700 font-semibold hover:underline">
-                        Foreclosure Help
+                <div class="flex items-center space-x-4">
+                    <a href="/stop-foreclosure" class="text-red-700 font-semibold hover:underline text-sm">
+                        Foreclosure
                     </a>
-                    <a href="/tax-liens" class="text-orange-700 font-semibold hover:underline">
-                        Tax Problems
+                    <a href="/tax-liens" class="text-orange-700 font-semibold hover:underline text-sm">
+                        Tax Help
                     </a>
-                    <div class="text-sm text-charcoal">
+                    <a href="/inherited-property" class="text-gray-700 font-semibold hover:underline text-sm">
+                        Inherited
+                    </a>
+                    <div class="text-sm text-charcoal border-l pl-4">
                         <div class="font-semibold">Veteran-Owned Family Business</div>
                         <div>Serving Tyler & East Texas Since 2018</div>
                     </div>
@@ -142,9 +145,23 @@
         </p>
     </div>
     
+    <!-- Inherited Property Banner - Desktop Only -->
+    <div class="bg-gray-700 text-white py-2 text-center hidden md:block">
+        <p class="container mx-auto px-4">
+            <strong>🏠 Inherited a Property?</strong> We handle everything with compassion and respect. 
+            <a href="/inherited-property" class="underline font-bold hover:no-underline">Learn More →</a>
+        </p>
+    </div>
+    
+    <!-- Emergency Banners - Mobile Only -->
+    <div class="md:hidden bg-red-700 text-white py-2 text-center mt-20">
+        <p class="px-4 text-sm font-semibold">
+            Need Help Fast? We Buy Houses in Any Situation
+        </p>
+    </div>
     <section class="hero-gradient text-white pt-36 md:pt-16 pb-16">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-2 items-center">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                     <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
                         Tyler Homeowners:<br>
@@ -155,10 +172,8 @@
                             <svg class="w-6 h-6 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <div>
                             <span>Stop Foreclosure & Keep Your Equity</span>
-                            <a href="/stop-foreclosure" class="text-yellow-300 underline text-sm block mt-1">Emergency Help →</a>
-                            </div>
+            <a href="/stop-foreclosure" class="text-yellow-300 underline text-sm">Emergency Help →</a>
                         </div>
                         <div class="flex items-start">
                             <svg class="w-6 h-6 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -252,7 +267,7 @@
                 We Buy Houses in <span class="brand-orange">Any Condition</span>
             </h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="text-center">
                     <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-10 h-10 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,13 +301,14 @@
                 </div>
                 
                 <div class="text-center">
-                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
                     <h3 class="font-bold text-xl mb-2 text-charcoal">Inherited Property</h3>
-                    <p class="text-gray-600">We handle probate properties and can close quickly with no clean-out needed</p>
+                    <p class="text-gray-600 mb-3">We handle probate properties and can close quickly with no clean-out needed</p>
+                    <a href="/inherited-property" class="text-brand-orange font-semibold hover:underline">Learn More →</a>
                 </div>
             </div>
             
@@ -494,8 +510,8 @@
                     <div class="grid grid-cols-2 gap-2 text-gray-400">
                         <a href="/stop-foreclosure" class="hover:text-white font-semibold">Stop Foreclosure</a>
                         <a href="/tax-liens" class="hover:text-white font-semibold">Tax Problems</a>
+                        <a href="/inherited-property" class="hover:text-white font-semibold">Inherited Homes</a>
                         <a href="/tyler-tx" class="hover:text-white">Tyler, TX</a>
-                        <a href="/longview-tx" class="hover:text-white">Longview, TX</a>
                         <a href="/whitehouse-tx" class="hover:text-white">Whitehouse, TX</a>
                         <a href="/lindale-tx" class="hover:text-white">Lindale, TX</a>
                     </div>
@@ -549,6 +565,9 @@
             } else if (reason === 'taxes') {
                 // Redirect to tax liens page
                 window.location.href = '/tax-liens';
+            } else if (reason === 'inherited') {
+                // Redirect to inherited property page
+                window.location.href = '/inherited-property';
             } else {
                 alert('Thank you! We will contact you within 24 hours with your cash offer.');
             }
@@ -565,7 +584,7 @@
             }
         });
         
-        // Redirect if foreclosure or taxes selected
+        // Redirect if foreclosure, taxes, or inherited selected
         document.querySelector('select').addEventListener('change', function() {
             if (this.value === 'foreclosure') {
                 if (confirm('Facing foreclosure? We have emergency help available. Go to our foreclosure help page?')) {
@@ -574,6 +593,10 @@
             } else if (this.value === 'taxes') {
                 if (confirm('Behind on property taxes? We can help pay them off. Go to our tax help page?')) {
                     window.location.href = '/tax-liens';
+                }
+            } else if (this.value === 'inherited') {
+                if (confirm('Inherited a property? We can help make this easier. Go to our inherited property page?')) {
+                    window.location.href = '/inherited-property';
                 }
             }
         });
