@@ -85,8 +85,8 @@
             </a>
         </div>
     </div>
-    <!-- Three Service Buttons -->
-    <div class="grid grid-cols-3 text-white text-center">
+    <!-- Four Service Buttons -->
+    <div class="grid grid-cols-4 text-white text-center">
         <a href="/stop-foreclosure" class="bg-red-700 py-2 text-xs">
             <div>⚠️ Foreclosure</div>
         </a>
@@ -95,6 +95,9 @@
         </a>
         <a href="/inherited-property" class="bg-gray-700 py-2 text-xs">
             <div>🏠 Inherited</div>
+        </a>
+        <a href="/repairs" class="bg-yellow-700 py-2 text-xs">
+            <div>🔨 Repairs</div>
         </a>
     </div>
 </div>
@@ -130,6 +133,9 @@
                     <a href="/inherited-property" class="text-gray-700 font-semibold hover:underline text-sm">
                         Inherited
                     </a>
+                    <a href="/repairs" class="text-yellow-700 font-semibold hover:underline text-sm">
+                        Repairs
+                    </a>
                     <div class="text-sm text-charcoal border-l pl-4">
                         <div class="font-semibold">Veteran-Owned Family Business</div>
                         <div>Serving Tyler & East Texas Since 2018</div>
@@ -163,6 +169,14 @@
         <p class="container mx-auto px-4">
             <strong>🏠 Inherited a Property?</strong> We handle everything with compassion and respect. 
             <a href="/inherited-property" class="underline font-bold hover:no-underline">Learn More →</a>
+        </p>
+    </div>
+    
+    <!-- Major Repairs Banner - Desktop Only -->
+    <div class="bg-yellow-700 text-white py-2 text-center hidden md:block">
+        <p class="container mx-auto px-4">
+            <strong>🔨 Major Repairs Needed?</strong> We buy as-is. No contractors, no stress. 
+            <a href="/repairs" class="underline font-bold hover:no-underline">Get As-Is Offer →</a>
         </p>
     </div>
     
@@ -299,13 +313,14 @@
                 </div>
                 
                 <div class="text-center">
-                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-yellow-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                     </div>
                     <h3 class="font-bold text-xl mb-2 text-charcoal">Major Repairs Needed</h3>
-                    <p class="text-gray-600">Fire damage, foundation issues, mold - we buy as-is, no repairs required</p>
+                    <p class="text-gray-600 mb-3">Fire damage, foundation issues, mold - we buy as-is, no repairs required</p>
+                    <a href="/repairs" class="text-brand-orange font-semibold hover:underline">Sell As-Is →</a>
                 </div>
                 
                 <div class="text-center">
@@ -519,6 +534,7 @@
                         <a href="/stop-foreclosure" class="hover:text-white font-semibold">Stop Foreclosure</a>
                         <a href="/tax-liens" class="hover:text-white font-semibold">Tax Problems</a>
                         <a href="/inherited-property" class="hover:text-white font-semibold">Inherited Homes</a>
+                        <a href="/repairs" class="hover:text-white font-semibold">Major Repairs</a>
                         <a href="/tyler-tx" class="hover:text-white">Tyler, TX</a>
                         <a href="/whitehouse-tx" class="hover:text-white">Whitehouse, TX</a>
                         <a href="/lindale-tx" class="hover:text-white">Lindale, TX</a>
@@ -576,6 +592,9 @@
             } else if (reason === 'inherited') {
                 // Redirect to inherited property page
                 window.location.href = '/inherited-property';
+            } else if (reason === 'repairs') {
+                // Redirect to repairs page
+                window.location.href = '/repairs';
             } else {
                 alert('Thank you! We will contact you within 24 hours with your cash offer.');
             }
@@ -592,7 +611,7 @@
             }
         });
         
-        // Redirect if foreclosure, taxes, or inherited selected
+        // Redirect if foreclosure, taxes, inherited, or repairs selected
         document.querySelector('select').addEventListener('change', function() {
             if (this.value === 'foreclosure') {
                 if (confirm('Facing foreclosure? We have emergency help available. Go to our foreclosure help page?')) {
@@ -605,6 +624,10 @@
             } else if (this.value === 'inherited') {
                 if (confirm('Inherited a property? We can help make this easier. Go to our inherited property page?')) {
                     window.location.href = '/inherited-property';
+                }
+            } else if (this.value === 'repairs') {
+                if (confirm('Major repairs needed? We buy as-is with no repairs required. Go to our repairs page?')) {
+                    window.location.href = '/repairs';
                 }
             }
         });
