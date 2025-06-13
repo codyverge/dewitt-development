@@ -94,6 +94,9 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-6">
+                    <a href="/stop-foreclosure" class="text-red-700 font-semibold hover:underline">
+                        Foreclosure Help
+                    </a>
                     <div class="text-sm text-charcoal">
                         <div class="font-semibold">Veteran-Owned Family Business</div>
                         <div>Serving Tyler & East Texas Since 2018</div>
@@ -105,6 +108,14 @@
             </div>
         </div>
     </header>
+    
+    <!-- Urgent Notice Banner (After Header) -->
+    <div class="bg-red-700 text-white py-3 text-center hidden md:block">
+        <p class="container mx-auto px-4">
+            <strong>⚠️ Facing Foreclosure?</strong> We can help you stop it and keep your equity. 
+            <a href="/stop-foreclosure" class="underline font-bold hover:no-underline">Get Emergency Help →</a>
+        </p>
+    </div>
     
     <!-- Hero Section -->
     <section class="hero-gradient text-white pt-24 md:pt-16 pb-16">
@@ -121,6 +132,7 @@
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
                             <span>Stop Foreclosure & Keep Your Equity</span>
+            <a href="/stop-foreclosure" class="text-yellow-300 underline text-sm">Emergency Help →</a>
                         </div>
                         <div class="flex items-start">
                             <svg class="w-6 h-6 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -222,7 +234,8 @@
                         </svg>
                     </div>
                     <h3 class="font-bold text-xl mb-2 text-charcoal">Facing Foreclosure</h3>
-                    <p class="text-gray-600">We can close before your auction date and help you keep your equity</p>
+                    <p class="text-gray-600 mb-3">We can close before your auction date and help you keep your equity</p>
+                    <a href="/stop-foreclosure" class="text-brand-orange font-semibold hover:underline">Learn More →</a>
                 </div>
                 
                 <div class="text-center">
@@ -442,12 +455,12 @@
                 <div>
                     <h3 class="font-bold text-xl mb-4">We Buy Houses In</h3>
                     <div class="grid grid-cols-2 gap-2 text-gray-400">
+                        <a href="/stop-foreclosure" class="hover:text-white font-semibold">Stop Foreclosure</a>
                         <a href="/tyler-tx" class="hover:text-white">Tyler, TX</a>
                         <a href="/longview-tx" class="hover:text-white">Longview, TX</a>
                         <a href="/whitehouse-tx" class="hover:text-white">Whitehouse, TX</a>
                         <a href="/lindale-tx" class="hover:text-white">Lindale, TX</a>
                         <a href="/marshall-tx" class="hover:text-white">Marshall, TX</a>
-                        <a href="/east-texas" class="hover:text-white">East Texas</a>
                     </div>
                 </div>
                 
@@ -491,8 +504,14 @@
     <script>
         document.getElementById('hero-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you! We will contact you within 24 hours with your cash offer.');
-            // In production, this would send to your CRM/email
+            const reason = this.querySelector('select').value;
+            
+            if (reason === 'foreclosure') {
+                // Redirect to foreclosure page
+                window.location.href = '/stop-foreclosure';
+            } else {
+                alert('Thank you! We will contact you within 24 hours with your cash offer.');
+            }
         });
         
         // Add alt text for broken images
@@ -503,6 +522,15 @@
                 altText.textContent = this.alt;
                 altText.className = 'text-sm text-gray-500';
                 this.parentNode.appendChild(altText);
+            }
+        });
+        
+        // Redirect if foreclosure selected
+        document.querySelector('select').addEventListener('change', function() {
+            if (this.value === 'foreclosure') {
+                if (confirm('Facing foreclosure? We have emergency help available. Go to our foreclosure help page?')) {
+                    window.location.href = '/stop-foreclosure';
+                }
             }
         });
     </script>
