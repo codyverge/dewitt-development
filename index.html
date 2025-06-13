@@ -31,12 +31,12 @@
     </script>
     
     <style>
-        /* Custom styles matching brand colors */
+        /* Custom styles with professional navy/orange palette */
         .hero-gradient {
-            background: linear-gradient(135deg, #C2410C 0%, #EA580C 100%);
+            background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%);
         }
         .shadow-call {
-            box-shadow: 0 4px 14px 0 rgba(194, 65, 12, 0.3);
+            box-shadow: 0 4px 14px 0 rgba(210, 105, 30, 0.3);
         }
         /* Smooth scroll */
         html {
@@ -47,22 +47,30 @@
             min-height: 44px;
             min-width: 44px;
         }
-        /* Logo integration */
-        .logo-bg {
-            background: #FEF3C7;
-            padding: 0.25rem 1rem;
-            border-radius: 0.5rem;
+        /* Custom orange from logo */
+        .brand-orange {
+            color: #D2691E;
         }
-        /* Warm backgrounds */
-        .warm-bg {
-            background: #FFF7ED;
+        .bg-brand-orange {
+            background-color: #D2691E;
+        }
+        .hover\:bg-brand-orange-dark:hover {
+            background-color: #B8571A;
+        }
+        /* Light background */
+        .light-bg {
+            background-color: #F7FAFC;
+        }
+        /* Charcoal text */
+        .text-charcoal {
+            color: #4A5568;
         }
     </style>
 </head>
 <body class="font-sans text-gray-900">
     
     <!-- Sticky Header for Mobile -->
-    <div class="fixed top-0 left-0 right-0 bg-orange-600 text-white p-2 z-50 md:hidden shadow-lg">
+    <div class="fixed top-0 left-0 right-0 bg-brand-orange text-white p-2 z-50 md:hidden shadow-lg">
         <a href="tel:9403730567" class="flex items-center justify-center space-x-2 tap-target">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -76,16 +84,14 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <div class="logo-bg">
-                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-12">
-                    </div>
+                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-12">
                 </div>
                 <div class="flex items-center space-x-6">
-                    <div class="text-sm text-gray-600">
+                    <div class="text-sm text-charcoal">
                         <div class="font-semibold">Veteran-Owned Family Business</div>
                         <div>Serving Tyler & East Texas Since 2018</div>
                     </div>
-                    <a href="tel:9403730567" class="bg-orange-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-700 transition shadow-call">
+                    <a href="tel:9403730567" class="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-brand-orange-dark transition shadow-call">
                         (940) 373-0567
                     </a>
                 </div>
@@ -123,7 +129,7 @@
                         </div>
                     </div>
                     <div class="flex items-center space-x-4 mb-8">
-                        <div class="bg-white/20 p-1 rounded-full backdrop-blur-sm">
+                        <div class="bg-white/10 p-1 rounded-full backdrop-blur-sm">
                             <img src="mike-military.jpg.jpg" alt="Major Mike DeWitt - Air Force Veteran" class="w-20 h-20 rounded-full border-2 border-white/50 object-cover">
                         </div>
                         <div>
@@ -135,17 +141,17 @@
                 
                 <!-- Contact Form -->
                 <div class="bg-white text-gray-900 p-6 md:p-8 rounded-lg shadow-xl">
-                    <h2 class="text-2xl font-bold mb-2">Get Your Cash Offer Today</h2>
+                    <h2 class="text-2xl font-bold mb-2 text-charcoal">Get Your Cash Offer Today</h2>
                     <p class="text-gray-600 mb-6">No obligation • No fees • No repairs needed</p>
                     
                     <form id="hero-form" class="space-y-4">
                         <input type="text" placeholder="Property Address" required 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D2691E] focus:border-transparent">
                         
                         <input type="tel" placeholder="Phone Number" required 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D2691E] focus:border-transparent">
                         
-                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-600">
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D2691E] focus:border-transparent text-gray-600">
                             <option value="">Why are you selling?</option>
                             <option value="foreclosure">Facing Foreclosure</option>
                             <option value="taxes">Behind on Taxes</option>
@@ -156,14 +162,14 @@
                             <option value="other">Other</option>
                         </select>
                         
-                        <button type="submit" class="w-full bg-orange-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-orange-700 transition shadow-call tap-target">
+                        <button type="submit" class="w-full bg-brand-orange text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-orange-dark transition shadow-call tap-target">
                             Get My Cash Offer →
                         </button>
                     </form>
                     
                     <div class="mt-4 text-center text-sm text-gray-600">
                         <span>or call now: </span>
-                        <a href="tel:9403730567" class="font-bold text-orange-600 hover:underline">(940) 373-0567</a>
+                        <a href="tel:9403730567" class="font-bold brand-orange hover:underline">(940) 373-0567</a>
                     </div>
                 </div>
             </div>
@@ -171,64 +177,64 @@
     </section>
     
     <!-- Trust Bar -->
-    <section class="warm-bg py-8 border-b border-orange-100">
+    <section class="light-bg py-8 border-b border-gray-200">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div>
-                    <div class="text-3xl font-bold text-orange-700">7</div>
-                    <div class="text-sm text-gray-600">Years in Business</div>
+                    <div class="text-3xl font-bold brand-orange">7</div>
+                    <div class="text-sm text-charcoal">Years in Business</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-orange-700">7-Day</div>
-                    <div class="text-sm text-gray-600">Average Close Time</div>
+                    <div class="text-3xl font-bold brand-orange">7-Day</div>
+                    <div class="text-sm text-charcoal">Average Close Time</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-orange-700">100%</div>
-                    <div class="text-sm text-gray-600">Close Rate</div>
+                    <div class="text-3xl font-bold brand-orange">100%</div>
+                    <div class="text-sm text-charcoal">Close Rate</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-orange-700">A+</div>
-                    <div class="text-sm text-gray-600">Customer Satisfaction</div>
+                    <div class="text-3xl font-bold brand-orange">A+</div>
+                    <div class="text-sm text-charcoal">Customer Satisfaction</div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- We Buy Any Condition -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-                We Buy Houses in <span class="text-orange-600">Any Condition</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+                We Buy Houses in <span class="brand-orange">Any Condition</span>
             </h2>
             
             <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <div class="text-center">
-                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Facing Foreclosure</h3>
+                    <h3 class="font-bold text-xl mb-2 text-charcoal">Facing Foreclosure</h3>
                     <p class="text-gray-600">We can close before your auction date and help you keep your equity</p>
                 </div>
                 
                 <div class="text-center">
-                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Major Repairs Needed</h3>
+                    <h3 class="font-bold text-xl mb-2 text-charcoal">Major Repairs Needed</h3>
                     <p class="text-gray-600">Fire damage, foundation issues, mold - we buy as-is, no repairs required</p>
                 </div>
                 
                 <div class="text-center">
-                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Inherited Property</h3>
+                    <h3 class="font-bold text-xl mb-2 text-charcoal">Inherited Property</h3>
                     <p class="text-gray-600">We handle probate properties and can close quickly with no clean-out needed</p>
                 </div>
             </div>
@@ -237,23 +243,23 @@
             <div class="grid md:grid-cols-2 gap-4">
                 <div>
                     <img src="property-exterior.jpg.png" alt="Recently purchased home in East Texas" class="w-full rounded-lg shadow-lg">
-                    <p class="text-sm text-gray-600 mt-2 text-center">Complete Renovation - Rockwall, TX</p>
+                    <p class="text-sm text-charcoal mt-2 text-center">Complete Renovation - Rockwall, TX</p>
                 </div>
                 <div>
                     <img src="property-interior.jpg.png" alt="Luxury bathroom renovation" class="w-full rounded-lg shadow-lg">
-                    <p class="text-sm text-gray-600 mt-2 text-center">High-End Finishes Throughout</p>
+                    <p class="text-sm text-charcoal mt-2 text-center">High-End Finishes Throughout</p>
                 </div>
             </div>
-            <p class="text-center mt-6 text-gray-700">
+            <p class="text-center mt-6 text-charcoal">
                 <strong>We Buy As-Is</strong> → Transform → Create Beautiful Homes
             </p>
         </div>
     </section>
     
     <!-- How It Works -->
-    <section class="py-16 warm-bg">
+    <section class="py-16 light-bg">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-charcoal">
                 How Our Process Works
             </h2>
             <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -262,32 +268,32 @@
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
-                    <div class="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                    <div class="bg-brand-orange text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                         1
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Contact Us Today</h3>
+                    <h3 class="font-bold text-xl mb-2 text-charcoal">Contact Us Today</h3>
                     <p class="text-gray-600">Call or fill out our form. We'll discuss your property and situation - no pressure, just solutions.</p>
                 </div>
                 
                 <div class="text-center">
-                    <div class="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                    <div class="bg-brand-orange text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                         2
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Get Your Cash Offer</h3>
+                    <h3 class="font-bold text-xl mb-2 text-charcoal">Get Your Cash Offer</h3>
                     <p class="text-gray-600">We'll make a fair, no-obligation cash offer within 24 hours. No fees, no commissions.</p>
                 </div>
                 
                 <div class="text-center">
-                    <div class="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                    <div class="bg-brand-orange text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                         3
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Pick Your Closing Date</h3>
+                    <h3 class="font-bold text-xl mb-2 text-charcoal">Pick Your Closing Date</h3>
                     <p class="text-gray-600">Accept our offer and choose when to close - as fast as 7 days. We handle everything.</p>
                 </div>
             </div>
             
             <div class="text-center mt-12">
-                <a href="tel:9403730567" class="bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-700 transition inline-block shadow-call">
+                <a href="tel:9403730567" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-orange-dark transition inline-block shadow-call">
                     Start Now - Call (940) 373-0567
                 </a>
             </div>
@@ -295,74 +301,74 @@
     </section>
     
     <!-- Why Choose Us -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-charcoal">
                         Why Tyler Homeowners Choose DeWitt Development
                     </h2>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="bg-orange-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-xl mb-2">Veteran-Owned Integrity</h3>
+                                <h3 class="font-bold text-xl mb-2 text-charcoal">Veteran-Owned Integrity</h3>
                                 <p class="text-gray-600">Major Mike DeWitt brings military precision and honor to every transaction. Air Force Academy graduate with 12 years of service.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="bg-orange-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-xl mb-2">Direct Cash Buyers</h3>
+                                <h3 class="font-bold text-xl mb-2 text-charcoal">Direct Cash Buyers</h3>
                                 <p class="text-gray-600">We're not wholesalers. We buy with our own funds, ensuring fast, reliable closings every time.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="bg-orange-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-xl mb-2">East Texas Focused</h3>
+                                <h3 class="font-bold text-xl mb-2 text-charcoal">East Texas Focused</h3>
                                 <p class="text-gray-600">Based in Rockwall, we specialize in Tyler, Longview, and surrounding East Texas communities. We know your market.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="bg-orange-100 p-3 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-xl mb-2">Family Business Values</h3>
+                                <h3 class="font-bold text-xl mb-2 text-charcoal">Family Business Values</h3>
                                 <p class="text-gray-600">Mike and Madalena DeWitt treat every seller with respect and compassion. Your success is our mission.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="warm-bg p-8 rounded-lg">
+                <div class="light-bg p-8 rounded-lg">
                     <img src="mike-professional.jpg.jpg" alt="Mike DeWitt - Real Estate Investor" class="w-full rounded-lg mb-6 max-w-sm mx-auto">
-                    <blockquote class="text-lg italic text-gray-700 mb-4">
+                    <blockquote class="text-lg italic text-charcoal mb-4">
                         "DeWitt Development saved us from foreclosure with just days to spare. They were professional, fast, and fair. We even had money left over to start fresh."
                     </blockquote>
                     <cite class="text-gray-600">- Sarah M., Tyler Homeowner</cite>
-                    <div class="mt-6 p-4 bg-white rounded-lg">
-                        <p class="text-sm text-gray-600 text-center">
+                    <div class="mt-6 p-4 bg-white rounded-lg border border-gray-200">
+                        <p class="text-sm text-charcoal text-center">
                             <strong>About Mike:</strong> Air Force Academy Graduate • 12 Years Active Duty • 
                             Major (Ret.) • Former Starting Fullback • Family Man • Trusted Investor
                         </p>
@@ -373,7 +379,7 @@
     </section>
     
     <!-- CTA Section -->
-    <section class="bg-orange-600 text-white py-16">
+    <section class="bg-brand-orange text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Get Your Cash Offer?
@@ -383,7 +389,7 @@
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a href="tel:9403730567" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-block">
+                <a href="tel:9403730567" class="bg-white text-[#D2691E] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-block">
                     <span class="flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -392,7 +398,7 @@
                     </span>
                 </a>
                 <span class="text-xl">or</span>
-                <a href="#hero-form" class="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-800 transition inline-block">
+                <a href="#hero-form" class="bg-[#1E3A5F] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#152C4A] transition inline-block">
                     Fill Out the Form Above
                 </a>
             </div>
@@ -409,9 +415,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <div class="logo-bg">
-                            <img src="logo.jpg.png" alt="DeWitt Development" class="h-8">
-                        </div>
+                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-8">
                         <h3 class="font-bold text-xl">DeWitt Development</h3>
                     </div>
                     <p class="text-gray-400 mb-4">
