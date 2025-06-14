@@ -6,6 +6,11 @@
     <title>Sell House That Needs Major Repairs Tyler TX | We Buy As-Is | DeWitt Development</title>
     <meta name="description" content="Foundation issues? Fire damage? Mold? We buy Tyler houses needing major repairs as-is. No contractors needed. Get cash offer today. Call (940) 373-0567.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -29,12 +34,15 @@
     </script>
     
     <style>
-        /* Custom styles matching main site */
+        /* Custom styles with DeWitt brand colors */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
         .hero-gradient {
-            background: linear-gradient(135deg, #92400E 0%, #F59E0B 100%);
+            background: linear-gradient(135deg, #344960 0%, #45566E 50%, #556678 100%);
         }
         .shadow-call {
-            box-shadow: 0 4px 14px 0 rgba(210, 105, 30, 0.3);
+            box-shadow: 0 4px 14px 0 rgba(204, 133, 97, 0.3);
         }
         html {
             scroll-behavior: smooth;
@@ -43,103 +51,215 @@
             min-height: 44px;
             min-width: 44px;
         }
+        /* Brand colors */
         .brand-orange {
-            color: #D2691E;
+            color: #CC8561;
         }
         .bg-brand-orange {
-            background-color: #D2691E;
+            background-color: #CC8561;
         }
         .hover\:bg-brand-orange-dark:hover {
-            background-color: #B8571A;
+            background-color: #B67452;
+        }
+        .brand-navy {
+            color: #344960;
+        }
+        .bg-brand-navy {
+            background-color: #344960;
+        }
+        .brand-beige {
+            color: #E3DADO;
+        }
+        .bg-brand-beige {
+            background-color: #E3DADO;
         }
         .light-bg {
-            background-color: #F7FAFC;
+            background-color: #FAF8F7;
         }
         .text-charcoal {
-            color: #4A5568;
+            color: #344960;
         }
-        /* Warning animation */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+        /* Mobile service bar gradient */
+        .service-gradient {
+            background: linear-gradient(to right, #344960 0%, #45566E 100%);
         }
-        .blink {
-            animation: blink 2s ease-in-out infinite;
+        /* Service divider */
+        .service-divider {
+            width: 1px;
+            background: rgba(227, 218, 208, 0.3);
+            height: 100%;
         }
-        /* Tool animation */
-        @keyframes rotate {
+        /* Construction warning pulse */
+        @keyframes pulse-construction {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .pulse-construction {
+            animation: pulse-construction 3s ease-in-out infinite;
+        }
+        /* Tool rotation animation */
+        @keyframes rotate-slow {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        .rotate {
-            animation: rotate 3s linear infinite;
+        .rotate-slow {
+            animation: rotate-slow 8s linear infinite;
+        }
+        /* Repair gradient */
+        .repair-gradient {
+            background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
         }
     </style>
 </head>
-<body class="font-sans text-gray-900">
+<body class="font-['Montserrat'] text-gray-900">
+    
+    <!-- Construction Warning Banner -->
+    <div class="repair-gradient text-gray-900 py-2 text-center font-semibold flex items-center justify-center">
+        <svg class="w-5 h-5 mr-2 rotate-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Skip the Repairs - We Buy As-Is - No Contractors Needed - Call: (940) 373-0567</span>
+    </div>
     
     <!-- Sticky Header for Mobile -->
-    <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
-        <div class="bg-brand-orange text-white p-2 shadow-lg">
-            <div class="flex items-center justify-between px-2">
-                <a href="/" class="bg-white p-1 rounded shadow-sm inline-block">
-                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-8 w-auto object-contain">
+    <div class="fixed top-8 left-0 right-0 z-50 md:hidden">
+        <!-- Phone Header -->
+        <div class="bg-white text-gray-900 shadow-lg">
+            <div class="flex items-center justify-between px-3 py-2">
+                <a href="/" class="inline-block">
+                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-10 w-auto">
                 </a>
-                <a href="tel:9403730567" class="flex items-center space-x-2 tap-target">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
+                <a href="tel:9403730567" class="flex items-center space-x-2 tap-target text-brand-orange">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <span class="font-bold">(940) 373-0567</span>
+                    <span class="font-semibold text-sm">(940) 373-0567</span>
+                </a>
+            </div>
+        </div>
+        <!-- Seamless Service Bar -->
+        <div class="service-gradient text-white">
+            <div class="grid grid-cols-4 h-12">
+                <a href="/stop-foreclosure" class="flex items-center justify-center hover:bg-white/10 transition-colors relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span class="text-xs font-medium">Foreclosure</span>
+                    </div>
+                    <div class="service-divider absolute right-0"></div>
+                </a>
+                <a href="/tax-liens" class="flex items-center justify-center hover:bg-white/10 transition-colors relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-xs font-medium">Tax Help</span>
+                    </div>
+                    <div class="service-divider absolute right-0"></div>
+                </a>
+                <a href="/inherited-property" class="flex items-center justify-center hover:bg-white/10 transition-colors relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span class="text-xs font-medium">Inherited</span>
+                    </div>
+                    <div class="service-divider absolute right-0"></div>
+                </a>
+                <a href="/repairs" class="flex items-center justify-center bg-amber-600 relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-xs font-medium">Repairs</span>
+                    </div>
                 </a>
             </div>
         </div>
     </div>
     
     <!-- Desktop Header -->
-    <header class="bg-white shadow-sm hidden md:block">
+    <header class="bg-white shadow-sm hidden md:block mt-8">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="/" class="bg-white p-2 rounded shadow-sm inline-block hover:shadow-md transition-shadow">
-                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-16 w-auto max-w-xs object-contain">
+                    <a href="/">
+                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-16 w-auto">
                     </a>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <div class="text-sm text-charcoal">
-                        <div class="font-semibold text-yellow-700">🔨 Major Repairs Needed?</div>
-                        <div>We Buy As-Is • No Contractors Required</div>
+                <div class="flex items-center space-x-4">
+                    <nav class="flex space-x-4">
+                        <a href="/" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Home</a>
+                        <a href="/stop-foreclosure" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Foreclosure</a>
+                        <a href="/tax-liens" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Tax Help</a>
+                        <a href="/inherited-property" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Inherited</a>
+                        <a href="/repairs" class="text-amber-700 font-semibold text-sm">Repairs</a>
+                    </nav>
+                    <div class="text-sm text-brand-navy border-l border-gray-300 pl-4">
+                        <div class="font-semibold text-amber-700 flex items-center">
+                            <span class="inline-block w-2 h-2 bg-amber-600 rounded-full mr-2"></span>
+                            Major Repairs Needed?
+                        </div>
+                        <div>We Buy As-Is • No Contractors</div>
                     </div>
                     <a href="tel:9403730567" class="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-brand-orange-dark transition shadow-call">
-                        (940) 373-0567
+                        Call: (940) 373-0567
                     </a>
                 </div>
             </div>
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white pt-24 md:pt-16 pb-16">
+    <!-- Hero Section - Matching Homepage Style -->
+    <section class="hero-gradient text-white pt-40 md:pt-32 pb-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
+                <!-- Construction Warning Badge -->
+                <div class="inline-flex items-center bg-amber-500 text-gray-900 px-4 py-2 rounded-full mb-6 pulse-construction">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span class="font-semibold">MAJOR REPAIRS NEEDED</span>
+                </div>
+                
                 <h1 class="text-3xl md:text-5xl font-bold mb-4">
                     House Needs Major Repairs?
                 </h1>
                 <p class="text-xl md:text-2xl mb-6">
                     We Buy Tyler Houses As-Is • No Repairs Needed • Cash in 7 Days
                 </p>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+                    <p class="text-lg font-semibold mb-4">
+                        No Contractors • No Stress • No Money Out of Pocket
+                    </p>
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div>
-                            <div class="text-3xl font-bold blink">⚠️</div>
+                            <div class="bg-red-100/20 p-3 rounded-full w-16 h-16 mx-auto mb-2">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
                             <div class="text-sm">Foundation<br>Issues</div>
                         </div>
                         <div class="border-x border-white/30">
-                            <div class="text-3xl font-bold blink" style="animation-delay: 0.5s;">🔥</div>
+                            <div class="bg-orange-100/20 p-3 rounded-full w-16 h-16 mx-auto mb-2">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                                </svg>
+                            </div>
                             <div class="text-sm">Fire<br>Damage</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold blink" style="animation-delay: 1s;">🏚️</div>
-                            <div class="text-sm">Mold &<br>Water Damage</div>
+                            <div class="bg-blue-100/20 p-3 rounded-full w-16 h-16 mx-auto mb-2">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
+                            </div>
+                            <div class="text-sm">Water/Mold<br>Damage</div>
                         </div>
                     </div>
                 </div>
@@ -147,29 +267,37 @@
             
             <!-- Repair Relief Form -->
             <div class="bg-white text-gray-900 p-6 md:p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
-                <h2 class="text-2xl font-bold mb-2 text-center text-yellow-700">
-                    Skip the Repairs, Get Cash Now
-                </h2>
-                <p class="text-center text-gray-600 mb-6">
-                    No contractors • No stress • No money out of pocket
-                </p>
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6">
+                    <h2 class="text-xl font-bold text-amber-800 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        Skip the Repairs Calculator
+                    </h2>
+                    <p class="text-sm text-amber-700 mt-1">
+                        No contractors • No estimates • No hassle
+                    </p>
+                </div>
                 
                 <form id="repairs-form" class="space-y-4">
                     <input type="text" placeholder="Property Address" required 
-                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                           class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent">
                     
                     <input type="tel" placeholder="Phone Number" required 
-                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                           class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent">
                     
-                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-gray-600">
-                        <option value="">Main Issue</option>
-                        <option value="foundation">Foundation Problems</option>
-                        <option value="fire">Fire/Smoke Damage</option>
-                        <option value="water">Water/Mold Damage</option>
-                        <option value="roof">Roof Issues</option>
-                        <option value="multiple">Multiple Major Issues</option>
-                        <option value="other">Other Major Repairs</option>
-                    </select>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Main Repair Issue</label>
+                        <select class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-gray-600">
+                            <option value="">Select Main Issue</option>
+                            <option value="foundation">Foundation Problems</option>
+                            <option value="fire">Fire/Smoke Damage</option>
+                            <option value="water">Water/Mold Damage</option>
+                            <option value="roof">Roof Issues</option>
+                            <option value="multiple">Multiple Major Issues</option>
+                            <option value="other">Other Major Repairs</option>
+                        </select>
+                    </div>
                     
                     <button type="submit" class="w-full bg-brand-orange text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-orange-dark transition shadow-call tap-target">
                         Get My As-Is Cash Offer →
@@ -177,7 +305,7 @@
                 </form>
                 
                 <p class="text-center text-sm text-gray-600 mt-4">
-                    Or call now: <a href="tel:9403730567" class="font-bold text-yellow-700">(940) 373-0567</a>
+                    Or call now: <a href="tel:9403730567" class="font-bold text-amber-700">(940) 373-0567</a>
                 </p>
             </div>
         </div>
@@ -186,21 +314,27 @@
     <!-- Repair Cost Reality Check -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 The Hidden Truth About Major Home Repairs in Tyler
             </h2>
             
             <div class="max-w-4xl mx-auto">
-                <div class="bg-red-50 border-2 border-red-400 p-6 rounded-lg mb-8">
-                    <p class="text-center text-lg font-semibold text-red-800">
-                        ⚠️ Tyler contractors are booked 3-6 months out. Can you wait that long?
+                <div class="bg-amber-50 border-2 border-amber-400 p-6 rounded-lg mb-8">
+                    <p class="text-center text-lg font-semibold text-amber-800 flex items-center justify-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Tyler contractors are booked 3-6 months out. Can you wait that long?
                     </p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-4 text-gray-700">
-                            💸 Typical Repair Costs in East Texas
+                    <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl mb-4 text-brand-navy flex items-center">
+                            <svg class="w-6 h-6 mr-2 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Typical Repair Costs in East Texas
                         </h3>
                         <ul class="space-y-3 text-gray-700">
                             <li>• <strong>Foundation Repair:</strong> $15,000-40,000+</li>
@@ -215,9 +349,12 @@
                         </div>
                     </div>
                     
-                    <div class="bg-yellow-50 p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-4 text-yellow-700">
-                            😰 The Contractor Nightmare
+                    <div class="bg-amber-50 border border-amber-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl mb-4 text-amber-700 flex items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            The Contractor Nightmare
                         </h3>
                         <ul class="space-y-3 text-gray-700">
                             <li>• Deposits required upfront</li>
@@ -228,7 +365,10 @@
                             <li>• Still have to sell after repairs</li>
                         </ul>
                         <div class="mt-4 p-3 bg-green-100 rounded">
-                            <p class="text-sm font-bold text-green-700">
+                            <p class="text-sm font-bold text-green-700 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
                                 OR: Sell to us as-is today!
                             </p>
                         </div>
@@ -236,7 +376,7 @@
                 </div>
                 
                 <div class="mt-8 text-center">
-                    <p class="text-xl font-semibold text-gray-700 mb-4">
+                    <p class="text-xl font-semibold text-brand-navy mb-4">
                         Why spend $50,000+ and wait months when you can sell as-is NOW?
                     </p>
                 </div>
@@ -245,27 +385,54 @@
     </section>
     
     <!-- What We Buy Section -->
-    <section class="py-16 light-bg">
+    <section class="py-16 bg-brand-beige">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 No Repair Too Big - We've Seen It All
             </h2>
             
             <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
                 <!-- Foundation Issues -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🏚️</span>
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
                     </div>
-                    <h3 class="font-bold text-xl mb-3 text-center">Foundation Problems</h3>
+                    <h3 class="font-bold text-xl mb-3 text-center text-brand-navy">Foundation Problems</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
-                        <li>✓ Cracked walls & ceilings</li>
-                        <li>✓ Doors won't close</li>
-                        <li>✓ Uneven floors</li>
-                        <li>✓ Pier & beam issues</li>
-                        <li>✓ Slab failures</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Cracked walls & ceilings
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Doors won't close
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Uneven floors
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Pier & beam issues
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Slab failures
+                        </li>
                     </ul>
-                    <p class="mt-3 text-center font-semibold text-yellow-700">
+                    <p class="mt-3 text-center font-semibold text-amber-700">
                         Average repair: $25,000+
                     </p>
                 </div>
@@ -273,15 +440,43 @@
                 <!-- Fire Damage -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🔥</span>
+                        <svg class="w-10 h-10 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                        </svg>
                     </div>
-                    <h3 class="font-bold text-xl mb-3 text-center">Fire & Smoke Damage</h3>
+                    <h3 class="font-bold text-xl mb-3 text-center text-brand-navy">Fire & Smoke Damage</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
-                        <li>✓ Structural damage</li>
-                        <li>✓ Smoke throughout</li>
-                        <li>✓ Water damage from firefighting</li>
-                        <li>✓ Electrical issues</li>
-                        <li>✓ Insurance nightmares</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Structural damage
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Smoke throughout
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Water damage from firefighting
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Electrical issues
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Insurance nightmares
+                        </li>
                     </ul>
                     <p class="mt-3 text-center font-semibold text-orange-700">
                         Average repair: $50,000+
@@ -291,78 +486,51 @@
                 <!-- Water/Mold -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">💧</span>
+                        <svg class="w-10 h-10 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
                     </div>
-                    <h3 class="font-bold text-xl mb-3 text-center">Water & Mold Damage</h3>
+                    <h3 class="font-bold text-xl mb-3 text-center text-brand-navy">Water & Mold Damage</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
-                        <li>✓ Black mold present</li>
-                        <li>✓ Rotted wood</li>
-                        <li>✓ Plumbing disasters</li>
-                        <li>✓ Roof leaks</li>
-                        <li>✓ Health hazards</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Black mold present
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Rotted wood
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Plumbing disasters
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Roof leaks
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-1 mt-0.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Health hazards
+                        </li>
                     </ul>
                     <p class="mt-3 text-center font-semibold text-blue-700">
                         Average repair: $15,000+
                     </p>
                 </div>
-                
-                <!-- More Issues -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🏠</span>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3 text-center">Structural Issues</h3>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>✓ Roof collapse risk</li>
-                        <li>✓ Termite damage</li>
-                        <li>✓ Rotting supports</li>
-                        <li>✓ Sagging structures</li>
-                        <li>✓ Code violations</li>
-                    </ul>
-                    <p class="mt-3 text-center font-semibold text-gray-700">
-                        Average repair: $30,000+
-                    </p>
-                </div>
-                
-                <!-- Systems -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">⚡</span>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3 text-center">System Failures</h3>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>✓ Old knob & tube wiring</li>
-                        <li>✓ Failed HVAC</li>
-                        <li>✓ Plumbing disasters</li>
-                        <li>✓ Septic failures</li>
-                        <li>✓ Well problems</li>
-                    </ul>
-                    <p class="mt-3 text-center font-semibold text-red-700">
-                        Average repair: $20,000+
-                    </p>
-                </div>
-                
-                <!-- Neglect -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🕸️</span>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3 text-center">Years of Neglect</h3>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>✓ Hoarder houses</li>
-                        <li>✓ Pet damage/odors</li>
-                        <li>✓ Vandalism</li>
-                        <li>✓ Squatter damage</li>
-                        <li>✓ Everything broken</li>
-                    </ul>
-                    <p class="mt-3 text-center font-semibold text-purple-700">
-                        Average repair: $40,000+
-                    </p>
-                </div>
             </div>
             
             <div class="mt-12 text-center">
-                <p class="text-2xl font-bold text-gray-700 mb-4">
+                <p class="text-2xl font-bold text-brand-navy mb-4">
                     We Buy ALL of These - No Exceptions
                 </p>
                 <a href="tel:9403730567" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-orange-dark transition inline-block shadow-call">
@@ -375,7 +543,7 @@
     <!-- Before/After Showcase -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 We Transform Disaster Properties
             </h2>
             <p class="text-center text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -404,8 +572,8 @@
                     </div>
                 </div>
                 
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-xl mb-3 text-[#1E3A5F] text-center">
+                <div class="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl mb-3 text-brand-navy text-center">
                         The Difference? You Don't Deal With Any of This:
                     </h3>
                     <div class="grid md:grid-cols-3 gap-4 text-center">
@@ -428,20 +596,22 @@
     </section>
     
     <!-- Why Choose Us for Repairs -->
-    <section class="py-16 light-bg">
+    <section class="py-16 bg-brand-beige">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Why Tyler Homeowners Trust Us With Damaged Properties
             </h2>
             
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-start">
-                        <div class="bg-yellow-100 p-3 rounded-full mr-4 flex-shrink-0">
-                            <span class="text-2xl">💪</span>
+                        <div class="bg-amber-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-2">We're Not Afraid of Big Problems</h3>
+                            <h3 class="font-bold text-lg mb-2 text-brand-navy">We're Not Afraid of Big Problems</h3>
                             <p class="text-gray-700">
                                 With 7 years of experience and 12+ complete renovations, we've seen 
                                 and fixed it all. Foundation issues, fire damage, mold - these don't 
@@ -454,10 +624,12 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-orange-100 p-3 rounded-full mr-4 flex-shrink-0">
-                            <span class="text-2xl">🤝</span>
+                            <svg class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-2">Fair Offers Despite Damage</h3>
+                            <h3 class="font-bold text-lg mb-2 text-brand-navy">Fair Offers Despite Damage</h3>
                             <p class="text-gray-700">
                                 We know repair costs, but we also value your time and peace of mind. 
                                 Our offers reflect the true cost of repairs minus the stress, delays, 
@@ -470,10 +642,12 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
-                            <span class="text-2xl">⚡</span>
+                            <svg class="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-2">Fast Cash, No Waiting</h3>
+                            <h3 class="font-bold text-lg mb-2 text-brand-navy">Fast Cash, No Waiting</h3>
                             <p class="text-gray-700">
                                 While others wait months for contractors, you'll have cash in hand 
                                 in 7 days. No permits, no delays, no contractor excuses - just a 
@@ -486,10 +660,12 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-green-100 p-3 rounded-full mr-4 flex-shrink-0">
-                            <span class="text-2xl">🛡️</span>
+                            <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-2">Veteran-Owned Integrity</h3>
+                            <h3 class="font-bold text-lg mb-2 text-brand-navy">Veteran-Owned Integrity</h3>
                             <p class="text-gray-700">
                                 Major Mike DeWitt brings military discipline to home buying. We do 
                                 what we say, when we say it. No games, no backing out - just honest, 
@@ -505,7 +681,7 @@
     <!-- Cost Comparison -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 The Real Math: Repair vs. Sell As-Is
             </h2>
             
@@ -565,7 +741,7 @@
                 </div>
                 
                 <div class="mt-8 text-center">
-                    <p class="text-xl font-semibold text-gray-700">
+                    <p class="text-xl font-semibold text-brand-navy">
                         Same money. Zero stress. Cash in days instead of months.
                     </p>
                 </div>
@@ -574,15 +750,15 @@
     </section>
     
     <!-- FAQ Section -->
-    <section class="py-16 light-bg">
+    <section class="py-16 bg-brand-beige">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Questions About Selling a House That Needs Repairs
             </h2>
             
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="font-bold text-lg mb-2">Do I need to get repair estimates first?</h3>
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">Do I need to get repair estimates first?</h3>
                     <p class="text-gray-700">
                         No! We have our own contractors and know repair costs. You don't need to 
                         waste time getting estimates. We'll evaluate everything and make a fair offer.
@@ -590,7 +766,7 @@
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="font-bold text-lg mb-2">What if my house is literally falling apart?</h3>
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">What if my house is literally falling apart?</h3>
                     <p class="text-gray-700">
                         We've bought houses with trees through the roof, fire damage throughout, 
                         and foundations so bad doors won't close. If it has walls and a roof 
@@ -599,7 +775,7 @@
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="font-bold text-lg mb-2">Will you really pay a fair price for a damaged house?</h3>
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">Will you really pay a fair price for a damaged house?</h3>
                     <p class="text-gray-700">
                         Yes! We factor in repair costs but also the time, stress, and risk you're 
                         avoiding. Many sellers are surprised how much they net compared to fixing 
@@ -608,7 +784,7 @@
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="font-bold text-lg mb-2">What if I already started repairs but ran out of money?</h3>
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">What if I already started repairs but ran out of money?</h3>
                     <p class="text-gray-700">
                         Very common! Half-finished repairs are fine. Whether you haven't started, 
                         halfway done, or made it worse trying DIY - we buy at any stage.
@@ -616,7 +792,7 @@
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="font-bold text-lg mb-2">Can I leave all the junk and damaged items?</h3>
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">Can I leave all the junk and damaged items?</h3>
                     <p class="text-gray-700">
                         Absolutely. Old appliances, damaged furniture, construction debris - leave 
                         it all. We handle complete clean-out as part of our renovation process.
@@ -627,7 +803,7 @@
     </section>
     
     <!-- Final CTA -->
-    <section class="bg-gradient-to-r from-yellow-700 to-yellow-600 text-white py-16">
+    <section class="bg-brand-orange text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
                 Stop Living in a Money Pit
@@ -638,16 +814,49 @@
             </p>
             
             <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-lg mx-auto mb-8">
+                <div class="bg-amber-500 text-gray-900 px-4 py-2 rounded-full inline-flex items-center mb-4 pulse-construction">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="font-bold">No Repairs Needed</span>
+                </div>
+                
                 <p class="text-2xl font-bold mb-4">We Make It Simple:</p>
                 <ul class="text-left space-y-3 mb-6">
-                    <li>✓ Buy your house exactly as-is</li>
-                    <li>✓ No repairs needed - period</li>
-                    <li>✓ Fair cash offer in 24 hours</li>
-                    <li>✓ Close in as fast as 7 days</li>
-                    <li>✓ We handle everything</li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Buy your house exactly as-is</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>No repairs needed - period</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Fair cash offer in 24 hours</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Close in as fast as 7 days</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>We handle everything</span>
+                    </li>
                 </ul>
                 
-                <a href="tel:9403730567" class="bg-white text-yellow-700 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition inline-block shadow-lg">
+                <a href="tel:9403730567" class="bg-white text-brand-orange px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition inline-block shadow-lg">
                     <span class="flex items-center justify-center">
                         <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -669,14 +878,12 @@
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <!-- Footer - Matching Homepage -->
+    <footer class="bg-brand-navy text-white py-12">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
                 <div class="inline-flex items-center space-x-3 mb-4">
-                    <div class="bg-white p-1 rounded shadow-sm">
-                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-10 w-auto max-w-[200px] object-contain">
-                    </div>
+                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-10 w-auto">
                     <h3 class="font-bold text-xl">DeWitt Development</h3>
                 </div>
                 <p class="text-gray-400 max-w-2xl mx-auto">
@@ -720,7 +927,7 @@
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400 text-sm">
                 <p>&copy; 2025 DeWitt Development LLC. All rights reserved.</p>
                 <p class="mt-2">
                     <a href="/privacy" class="hover:text-white">Privacy Policy</a> | 
@@ -743,11 +950,23 @@
                 message += 'We buy many fire-damaged homes. Expect our call within 24 hours.';
             } else if (issue === 'water') {
                 message += 'Water and mold damage is no problem for us. We\'ll call soon.';
+            } else if (issue === 'multiple') {
+                message += 'Multiple issues? No problem. The more repairs needed, the more we can help. We\'ll call within 24 hours.';
             } else {
                 message += 'No repair is too big. We\'ll contact you within 24 hours.';
             }
             
             alert(message);
+        });
+        
+        // Add warning based on repair type selected
+        const repairSelect = document.querySelector('select');
+        repairSelect.addEventListener('change', function() {
+            if (this.value === 'foundation' || this.value === 'fire' || this.value === 'multiple') {
+                this.classList.add('border-red-500', 'bg-red-50');
+            } else {
+                this.classList.remove('border-red-500', 'bg-red-50');
+            }
         });
     </script>
 </body>
