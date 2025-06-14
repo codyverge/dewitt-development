@@ -6,6 +6,11 @@
     <title>Stop Foreclosure Tyler TX | Keep Your Equity | DeWitt Development</title>
     <meta name="description" content="Facing foreclosure in Tyler? We can help you stop foreclosure, keep your equity, and move on with cash. Close in 7 days. Call (940) 373-0567 now.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -29,12 +34,15 @@
     </script>
     
     <style>
-        /* Custom styles matching main site */
+        /* Custom styles with DeWitt brand colors */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
         .hero-gradient {
-            background: linear-gradient(135deg, #991B1B 0%, #DC2626 100%);
+            background: linear-gradient(135deg, #344960 0%, #45566E 50%, #556678 100%);
         }
         .shadow-call {
-            box-shadow: 0 4px 14px 0 rgba(210, 105, 30, 0.3);
+            box-shadow: 0 4px 14px 0 rgba(204, 133, 97, 0.3);
         }
         html {
             scroll-behavior: smooth;
@@ -43,63 +51,153 @@
             min-height: 44px;
             min-width: 44px;
         }
+        /* Brand colors */
         .brand-orange {
-            color: #D2691E;
+            color: #CC8561;
         }
         .bg-brand-orange {
-            background-color: #D2691E;
+            background-color: #CC8561;
         }
         .hover\:bg-brand-orange-dark:hover {
-            background-color: #B8571A;
+            background-color: #B67452;
+        }
+        .brand-navy {
+            color: #344960;
+        }
+        .bg-brand-navy {
+            background-color: #344960;
+        }
+        .brand-beige {
+            color: #E3DADO;
+        }
+        .bg-brand-beige {
+            background-color: #E3DADO;
         }
         .light-bg {
-            background-color: #F7FAFC;
+            background-color: #FAF8F7;
         }
         .text-charcoal {
-            color: #4A5568;
+            color: #344960;
         }
-        /* Pulsing animation for urgency */
-        @keyframes pulse-red {
+        /* Mobile service bar gradient */
+        .service-gradient {
+            background: linear-gradient(to right, #344960 0%, #45566E 100%);
+        }
+        /* Service divider */
+        .service-divider {
+            width: 1px;
+            background: rgba(227, 218, 208, 0.3);
+            height: 100%;
+        }
+        /* Urgent badge animation */
+        @keyframes pulse-urgent {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-urgent {
+            animation: pulse-urgent 2s ease-in-out infinite;
+        }
+        /* Flashing text for extreme urgency */
+        @keyframes flash {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
-        .pulse-red {
-            animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        .flash {
+            animation: flash 1.5s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="font-sans text-gray-900">
+<body class="font-['Montserrat'] text-gray-900">
+    
+    <!-- Urgent Banner - Only on this page -->
+    <div class="bg-red-700 text-white py-2 text-center font-semibold flash">
+        ⚠️ FORECLOSURE EMERGENCY? We Can Close Before Your Auction Date - Call NOW: (940) 373-0567
+    </div>
     
     <!-- Sticky Header for Mobile -->
-    <div class="fixed top-0 left-0 right-0 bg-red-700 text-white p-2 z-50 md:hidden shadow-lg">
-        <div class="flex items-center justify-between px-2">
-            <a href="/" class="bg-white p-1 rounded shadow-sm inline-block">
-            <img src="logo.jpg.png" alt="DeWitt Development" class="h-8 w-auto object-contain">
-            </a>
-            <a href="tel:9403730567" class="flex items-center space-x-2 tap-target">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span class="font-bold">URGENT: (940) 373-0567</span>
-            </a>
+    <div class="fixed top-8 left-0 right-0 z-50 md:hidden">
+        <!-- Phone Header -->
+        <div class="bg-white text-gray-900 shadow-lg">
+            <div class="flex items-center justify-between px-3 py-2">
+                <a href="/" class="inline-block">
+                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-10 w-auto">
+                </a>
+                <a href="tel:9403730567" class="flex items-center space-x-2 tap-target text-brand-orange">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span class="font-semibold text-sm">(940) 373-0567</span>
+                </a>
+            </div>
+        </div>
+        <!-- Seamless Service Bar -->
+        <div class="service-gradient text-white">
+            <div class="grid grid-cols-4 h-12">
+                <a href="/stop-foreclosure" class="flex items-center justify-center bg-red-700 relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span class="text-xs font-medium">Foreclosure</span>
+                    </div>
+                    <div class="service-divider absolute right-0"></div>
+                </a>
+                <a href="/tax-liens" class="flex items-center justify-center hover:bg-white/10 transition-colors relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-xs font-medium">Tax Help</span>
+                    </div>
+                    <div class="service-divider absolute right-0"></div>
+                </a>
+                <a href="/inherited-property" class="flex items-center justify-center hover:bg-white/10 transition-colors relative">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span class="text-xs font-medium">Inherited</span>
+                    </div>
+                    <div class="service-divider absolute right-0"></div>
+                </a>
+                <a href="/repairs" class="flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-xs font-medium">Repairs</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     
     <!-- Desktop Header -->
-    <header class="bg-white shadow-sm hidden md:block">
+    <header class="bg-white shadow-sm hidden md:block mt-8">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="/" class="bg-white p-2 rounded shadow-sm inline-block hover:shadow-md transition-shadow">
-                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-16 w-auto max-w-xs object-contain">
+                    <a href="/">
+                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-16 w-auto">
                     </a>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <div class="text-sm text-charcoal">
-                        <div class="font-semibold text-red-700">⚠️ Foreclosure Date Approaching?</div>
-                        <div>We Can Close Before Your Auction</div>
+                <div class="flex items-center space-x-4">
+                    <nav class="flex space-x-4">
+                        <a href="/" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Home</a>
+                        <a href="/stop-foreclosure" class="text-red-700 font-semibold text-sm">Foreclosure</a>
+                        <a href="/tax-liens" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Tax Help</a>
+                        <a href="/inherited-property" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Inherited</a>
+                        <a href="/repairs" class="text-gray-700 hover:text-brand-orange text-sm font-medium">Repairs</a>
+                    </nav>
+                    <div class="text-sm text-brand-navy border-l border-gray-300 pl-4">
+                        <div class="font-semibold text-red-700 flex items-center">
+                            <span class="inline-block w-2 h-2 bg-red-700 rounded-full mr-2 pulse-urgent"></span>
+                            Foreclosure Emergency?
+                        </div>
+                        <div>We Can Close in 7 Days</div>
                     </div>
-                    <a href="tel:9403730567" class="bg-red-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-800 transition shadow-lg pulse-red">
+                    <a href="tel:9403730567" class="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-brand-orange-dark transition shadow-call">
                         Call NOW: (940) 373-0567
                     </a>
                 </div>
@@ -107,19 +205,27 @@
         </div>
     </header>
     
-    <!-- Hero Section - URGENT -->
-    <section class="hero-gradient text-white pt-24 md:pt-16 pb-16">
+    <!-- Hero Section - Matching Homepage Style -->
+    <section class="hero-gradient text-white pt-40 md:pt-32 pb-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
+                <!-- Urgent Badge -->
+                <div class="inline-flex items-center bg-red-700 text-white px-4 py-2 rounded-full mb-6 pulse-urgent">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span class="font-semibold">TIME SENSITIVE - ACT NOW</span>
+                </div>
+                
                 <h1 class="text-3xl md:text-5xl font-bold mb-4">
                     Stop Foreclosure in Tyler, TX
                 </h1>
                 <p class="text-xl md:text-2xl mb-6">
                     Keep Your Equity • Avoid Bankruptcy • Move On With Cash
                 </p>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
                     <p class="text-lg font-semibold mb-4">
-                        ⏰ Time is Critical - Every Day Matters
+                        We've Helped 47+ Tyler Families Stop Foreclosure
                     </p>
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div>
@@ -140,25 +246,31 @@
             
             <!-- Emergency Contact Form -->
             <div class="bg-white text-gray-900 p-6 md:p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
-                <h2 class="text-2xl font-bold mb-2 text-center text-red-700">
-                    Get Emergency Help Now
-                </h2>
-                <p class="text-center text-gray-600 mb-6">
-                    We've helped 47+ Tyler families stop foreclosure
-                </p>
+                <div class="bg-red-50 border-l-4 border-red-700 p-4 mb-6">
+                    <h2 class="text-xl font-bold text-red-700">
+                        ⚠️ Foreclosure Emergency Form
+                    </h2>
+                    <p class="text-sm text-red-600 mt-1">
+                        Complete this form for immediate assistance
+                    </p>
+                </div>
                 
                 <form id="foreclosure-form" class="space-y-4">
                     <input type="text" placeholder="Property Address" required 
-                           class="w-full px-4 py-3 border-2 border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent">
                     
                     <input type="tel" placeholder="Phone Number" required 
-                           class="w-full px-4 py-3 border-2 border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                           class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent">
                     
-                    <input type="date" placeholder="Foreclosure Date" 
-                           class="w-full px-4 py-3 border-2 border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Foreclosure Auction Date</label>
+                        <input type="date" required 
+                               class="w-full px-4 py-3 border-2 border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <p class="text-xs text-red-600 mt-1">Critical: We need to know your timeline</p>
+                    </div>
                     
-                    <button type="submit" class="w-full bg-red-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-red-800 transition shadow-lg tap-target">
-                        Save My Home →
+                    <button type="submit" class="w-full bg-brand-orange text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-orange-dark transition shadow-call tap-target">
+                        Get Emergency Help Now →
                     </button>
                 </form>
                 
@@ -172,23 +284,23 @@
     <!-- Your Options Timeline -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Your Foreclosure Timeline & Options
             </h2>
             
             <div class="max-w-4xl mx-auto">
                 <!-- Timeline -->
                 <div class="relative">
-                    <div class="absolute left-8 top-0 bottom-0 w-1 bg-red-300"></div>
+                    <div class="absolute left-8 top-0 bottom-0 w-1 bg-gray-300"></div>
                     
                     <div class="space-y-8">
-                        <!-- Day 1 -->
+                        <!-- Today -->
                         <div class="flex items-start">
-                            <div class="bg-red-700 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                            <div class="bg-brand-orange text-white w-16 h-16 rounded-full flex items-center justify-center font-bold flex-shrink-0 pulse-urgent">
                                 NOW
                             </div>
-                            <div class="ml-6 bg-red-50 p-6 rounded-lg flex-grow">
-                                <h3 class="font-bold text-xl mb-2">Today - You Have Options</h3>
+                            <div class="ml-6 bg-green-50 border border-green-200 p-6 rounded-lg flex-grow">
+                                <h3 class="font-bold text-xl mb-2 text-brand-navy">Today - You Have Options</h3>
                                 <p class="text-gray-700 mb-3">You found us in time. We can still help you:</p>
                                 <ul class="space-y-2 text-gray-600">
                                     <li>✓ Stop the foreclosure process</li>
@@ -201,11 +313,11 @@
                         
                         <!-- 30 Days -->
                         <div class="flex items-start">
-                            <div class="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                            <div class="bg-yellow-500 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold flex-shrink-0">
                                 30
                             </div>
-                            <div class="ml-6 bg-orange-50 p-6 rounded-lg flex-grow">
-                                <h3 class="font-bold text-xl mb-2">30 Days Out - Limited Options</h3>
+                            <div class="ml-6 bg-yellow-50 border border-yellow-200 p-6 rounded-lg flex-grow">
+                                <h3 class="font-bold text-xl mb-2 text-brand-navy">30 Days Out - Limited Options</h3>
                                 <p class="text-gray-700">
                                     Traditional buyers need 45-60 days. Banks won't help. 
                                     Only cash buyers like us can close this fast.
@@ -215,12 +327,14 @@
                         
                         <!-- Auction -->
                         <div class="flex items-start">
-                            <div class="bg-gray-700 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                                0
+                            <div class="bg-red-700 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
                             </div>
-                            <div class="ml-6 bg-gray-100 p-6 rounded-lg flex-grow">
-                                <h3 class="font-bold text-xl mb-2 text-gray-700">Auction Day - Too Late</h3>
-                                <p class="text-gray-600">
+                            <div class="ml-6 bg-red-50 border border-red-200 p-6 rounded-lg flex-grow">
+                                <h3 class="font-bold text-xl mb-2 text-red-700">Auction Day - Too Late</h3>
+                                <p class="text-gray-700">
                                     <strong>You lose everything:</strong> Your equity, your credit, your options. 
                                     The bank takes it all. Don't let this happen.
                                 </p>
@@ -234,7 +348,7 @@
                 <p class="text-2xl font-bold text-red-700 mb-4">
                     Don't Wait Another Day
                 </p>
-                <a href="tel:9403730567" class="bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-800 transition inline-block shadow-lg">
+                <a href="tel:9403730567" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-orange-dark transition inline-block shadow-call">
                     Call Now: (940) 373-0567
                 </a>
             </div>
@@ -242,9 +356,9 @@
     </section>
     
     <!-- Equity Calculator Visual -->
-    <section class="py-16 light-bg">
+    <section class="py-16 bg-brand-beige">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Don't Lose Your Equity to the Bank
             </h2>
             
@@ -254,7 +368,7 @@
                         <h3 class="font-bold text-xl mb-4 text-red-700">
                             ❌ If You Let It Foreclose
                         </h3>
-                        <div class="bg-red-50 p-6 rounded-lg">
+                        <div class="bg-red-50 p-6 rounded-lg border border-red-200">
                             <p class="text-3xl font-bold text-red-700 mb-2">$0</p>
                             <p class="text-gray-600 mb-4">You Get Nothing</p>
                             <ul class="text-left text-sm text-gray-600 space-y-2">
@@ -270,7 +384,7 @@
                         <h3 class="font-bold text-xl mb-4 text-green-700">
                             ✓ If You Sell To Us Now
                         </h3>
-                        <div class="bg-green-50 p-6 rounded-lg">
+                        <div class="bg-green-50 p-6 rounded-lg border border-green-200">
                             <p class="text-3xl font-bold text-green-700 mb-2">$15K-50K+</p>
                             <p class="text-gray-600 mb-4">Average Seller Equity Saved</p>
                             <ul class="text-left text-sm text-gray-600 space-y-2">
@@ -283,8 +397,8 @@
                     </div>
                 </div>
                 
-                <div class="mt-8 text-center">
-                    <p class="text-lg text-gray-700 font-semibold">
+                <div class="mt-8 text-center bg-blue-50 p-4 rounded-lg">
+                    <p class="text-lg text-brand-navy font-semibold">
                         Tyler homeowners typically have $30,000+ in equity they'd lose in foreclosure
                     </p>
                 </div>
@@ -295,13 +409,13 @@
     <!-- Tyler Specific Info -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Foreclosure Process in Smith County, Texas
             </h2>
             
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-xl mb-4 text-[#1E3A5F]">
+                <div class="bg-[#F5F1EE] p-6 rounded-lg">
+                    <h3 class="font-bold text-xl mb-4 text-brand-navy">
                         📍 Tyler/Smith County Process
                     </h3>
                     <ul class="space-y-3 text-gray-700">
@@ -325,9 +439,9 @@
                 </div>
             </div>
             
-            <div class="mt-12 bg-yellow-50 border-2 border-yellow-400 p-6 rounded-lg max-w-2xl mx-auto">
+            <div class="mt-12 bg-red-50 border-2 border-red-400 p-6 rounded-lg max-w-2xl mx-auto">
                 <p class="text-center text-lg">
-                    <strong class="text-yellow-800">⚠️ Texas Law:</strong> Once your home is posted for foreclosure, 
+                    <strong class="text-red-700">⚠️ Texas Law:</strong> Once your home is posted for foreclosure, 
                     you have just 21 days before you lose everything. We can close in 7.
                 </p>
             </div>
@@ -335,9 +449,9 @@
     </section>
     
     <!-- Success Stories -->
-    <section class="py-16 light-bg">
+    <section class="py-16 bg-brand-beige">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Tyler Families We've Helped Avoid Foreclosure
             </h2>
             
@@ -350,7 +464,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold">Stopped with 10 Days Left</h3>
+                            <h3 class="font-bold text-brand-navy">Stopped with 10 Days Left</h3>
                             <p class="text-sm text-gray-600">South Tyler Homeowner</p>
                         </div>
                     </div>
@@ -370,7 +484,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold">Medical Bills Crisis</h3>
+                            <h3 class="font-bold text-brand-navy">Medical Bills Crisis</h3>
                             <p class="text-sm text-gray-600">Whitehouse Area</p>
                         </div>
                     </div>
@@ -388,45 +502,45 @@
     <!-- FAQ Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-charcoal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-navy">
                 Common Foreclosure Questions
             </h2>
             
             <div class="max-w-3xl mx-auto space-y-6">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">How fast can you really close?</h3>
+                <div class="bg-[#F5F1EE] p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">How fast can you really close?</h3>
                     <p class="text-gray-700">
                         Our record is 3 days. Average is 7 days. We use our own cash, no bank delays. 
                         If your auction is next week, we can make it happen.
                     </p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">Will I have any money left after paying off the mortgage?</h3>
+                <div class="bg-[#F5F1EE] p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">Will I have any money left after paying off the mortgage?</h3>
                     <p class="text-gray-700">
                         Most Tyler homeowners have built equity. We pay off your mortgage and you keep 
                         the difference. Average is $15,000-50,000 in your pocket.
                     </p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">Is this legal? Sounds too good to be true.</h3>
+                <div class="bg-[#F5F1EE] p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">Is this legal? Sounds too good to be true.</h3>
                     <p class="text-gray-700">
                         100% legal. We're licensed Texas real estate investors. We buy your home before 
                         the bank takes it. You sell to us instead of losing it to foreclosure.
                     </p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">What if my house needs major repairs?</h3>
+                <div class="bg-[#F5F1EE] p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">What if my house needs major repairs?</h3>
                     <p class="text-gray-700">
                         We buy as-is. Roof leaking? Foundation issues? Doesn't matter. 
                         We handle all repairs after closing. You don't spend a penny.
                     </p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">Can you stop a foreclosure that's already started?</h3>
+                <div class="bg-[#F5F1EE] p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2 text-brand-navy">Can you stop a foreclosure that's already started?</h3>
                     <p class="text-gray-700">
                         Yes, if there's time. Even if you're days away from auction, call us. 
                         We've stopped foreclosures with less than 72 hours notice. Every situation is different.
@@ -437,7 +551,7 @@
     </section>
     
     <!-- Final CTA -->
-    <section class="bg-red-700 text-white py-16">
+    <section class="bg-brand-orange text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
                 Every Day You Wait Costs You Money
@@ -447,14 +561,21 @@
             </p>
             
             <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-lg mx-auto mb-8">
-                <p class="text-2xl font-bold mb-4">Free Consultation Today</p>
+                <div class="bg-red-600 text-white px-4 py-2 rounded-full inline-flex items-center mb-4 pulse-urgent">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="font-bold">Time is Running Out</span>
+                </div>
+                
+                <p class="text-2xl font-bold mb-4">Free Emergency Consultation</p>
                 <p class="mb-6">
                     • Know your options in 30 minutes<br>
                     • Get your cash offer in 24 hours<br>
                     • Close before your auction date
                 </p>
                 
-                <a href="tel:9403730567" class="bg-white text-red-700 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition inline-block shadow-lg">
+                <a href="tel:9403730567" class="bg-white text-brand-orange px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition inline-block shadow-lg">
                     <span class="flex items-center justify-center">
                         <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -476,14 +597,12 @@
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <!-- Footer - Matching Homepage -->
+    <footer class="bg-brand-navy text-white py-12">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
                 <div class="inline-flex items-center space-x-3 mb-4">
-                    <div class="bg-white p-1 rounded shadow-sm">
-                        <img src="logo.jpg.png" alt="DeWitt Development" class="h-10 w-auto max-w-[200px] object-contain">
-                    </div>
+                    <img src="logo.jpg.png" alt="DeWitt Development" class="h-10 w-auto">
                     <h3 class="font-bold text-xl">DeWitt Development</h3>
                 </div>
                 <p class="text-gray-400 max-w-2xl mx-auto">
@@ -519,18 +638,17 @@
                     <div class="text-gray-400 text-sm space-y-1">
                         <a href="/inherited-property" class="hover:text-white block">Inherited Property</a>
                         <a href="/tax-liens" class="hover:text-white block">Tax Liens</a>
-                        <a href="/tired-landlord" class="hover:text-white block">Tired Landlords</a>
-                        <a href="/" class="hover:text-white block">All Services</a>
+                        <a href="/repairs" class="hover:text-white block">Major Repairs</a>
+                        <a href="/" class="hover:text-white block">Home</a>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400 text-sm">
                 <p>&copy; 2025 DeWitt Development LLC. All rights reserved.</p>
                 <p class="mt-2">
                     <a href="/privacy" class="hover:text-white">Privacy Policy</a> | 
-                    <a href="/terms" class="hover:text-white">Terms of Service</a> | 
-                    TREC License #123456
+                    <a href="/terms" class="hover:text-white">Terms of Service</a>
                 </p>
             </div>
         </div>
@@ -540,18 +658,34 @@
     <script>
         document.getElementById('foreclosure-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Emergency help request received! We will call you within 1 hour during business hours or first thing in the morning.');
+            
+            // Get the foreclosure date
+            const dateInput = document.querySelector('input[type="date"]');
+            const foreclosureDate = new Date(dateInput.value);
+            const today = new Date();
+            const daysLeft = Math.ceil((foreclosureDate - today) / (1000 * 60 * 60 * 24));
+            
+            if (daysLeft > 0 && daysLeft < 30) {
+                alert(`URGENT: Only ${daysLeft} days until foreclosure! We will call you within 1 hour during business hours or first thing in the morning. If this is an emergency, please call (940) 373-0567 NOW.`);
+            } else {
+                alert('Emergency help request received! We will call you within 1 hour during business hours or first thing in the morning.');
+            }
         });
         
-        // Add countdown timer if foreclosure date provided
+        // Add countdown timer functionality
         const dateInput = document.querySelector('input[type="date"]');
         dateInput.addEventListener('change', function() {
             const foreclosureDate = new Date(this.value);
             const today = new Date();
             const daysLeft = Math.ceil((foreclosureDate - today) / (1000 * 60 * 60 * 24));
             
-            if (daysLeft > 0 && daysLeft < 30) {
-                alert(`Only ${daysLeft} days until foreclosure! Call us immediately at (940) 373-0567`);
+            if (daysLeft > 0 && daysLeft < 7) {
+                // Show extreme urgency
+                this.classList.add('border-red-500', 'bg-red-50');
+                const urgentText = document.createElement('p');
+                urgentText.className = 'text-red-700 font-bold mt-2 flash';
+                urgentText.textContent = `⚠️ CRITICAL: Only ${daysLeft} days left! Call NOW!`;
+                this.parentNode.appendChild(urgentText);
             }
         });
     </script>
